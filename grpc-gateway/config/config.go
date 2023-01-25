@@ -1,6 +1,7 @@
 package config
 
 type Config struct {
+	GatewayIP   string `env:GATEWAY_IP`
 	GatewayPort string `env:"GATEWAY_PORT"`
 
 	ClientID     string `env:"CLIENT_ID"`
@@ -11,6 +12,7 @@ type Config struct {
 }
 
 var config = &Config{
+	GatewayIP:   "localhost",
 	GatewayPort: "9091",
 
 	ServerIP:   "localhost",

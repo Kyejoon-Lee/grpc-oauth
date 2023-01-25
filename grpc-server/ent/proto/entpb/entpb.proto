@@ -4,6 +4,8 @@ syntax = "proto3";
 package entpb;
 
 import "google/protobuf/empty.proto";
+import "google/api/annotations.proto";
+
 
 option go_package = "github.com/Kyejoon-Lee/grpc-server/ent/proto/entpb";
 
@@ -74,13 +76,31 @@ message BatchCreateUsersResponse {
 }
 
 service UserService {
-  rpc Create ( CreateUserRequest ) returns ( User );
+  rpc Create ( CreateUserRequest ) returns ( User ){
+    option (google.api.http) = {
+      post: "/v1/user"
+      body: "*"
+    };
+  };
 
-  rpc Get ( GetUserRequest ) returns ( User );
+  rpc Get ( GetUserRequest ) returns ( User ){
+    option (google.api.http) = {
+      get: "/v1/user/{user_id}"
+    };
+  };
 
-  rpc Update ( UpdateUserRequest ) returns ( User );
+  rpc Update ( UpdateUserRequest ) returns ( User ){
+    option (google.api.http) = {
+      put: "/v1/user/{user_id}"
+      body: "*"
+    };
+  };
 
-  rpc Delete ( DeleteUserRequest ) returns ( google.protobuf.Empty );
+  rpc Delete ( DeleteUserRequest ) returns ( google.protobuf.Empty ){
+    option (google.api.http) = {
+      delete: "/v1/user/{user_id}"
+    };
+  };
 
   rpc List ( ListUserRequest ) returns ( ListUserResponse );
 

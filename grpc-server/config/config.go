@@ -9,6 +9,9 @@ type Config struct {
 	DBName     string `env:"DB_NAME"`
 
 	TimeZone string `env:"TIMEZONE"`
+
+	ServerIP   string `env:"SERVER_IP"`
+	ServerPort string `env:"SERVER_PORT"`
 }
 
 var config = &Config{
@@ -20,6 +23,9 @@ var config = &Config{
 	DBPassword: "test1234",
 
 	TimeZone: "Asia/Seoul",
+
+	ServerIP:   "localhost",
+	ServerPort: "9090",
 }
 
 func GetConfig() *Config {
