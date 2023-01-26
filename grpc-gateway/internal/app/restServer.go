@@ -26,8 +26,8 @@ var (
 )
 
 func (s *RestServer) StartGatewayServer() {
+	//gin.SetMode(gin.ReleaseMode)
 	r := gin.New()
-	gin.SetMode(gin.DebugMode)
 
 	r.Use(gin.Recovery())
 	r.Use(cors.New(cors.Config{
@@ -38,8 +38,8 @@ func (s *RestServer) StartGatewayServer() {
 		MaxAge:           1,
 	}))
 
-	// For making connection to GRPC servers you must make grpc dial
-	// to several servers.
+	//For making connection to GRPC servers you must make grpc dial
+	//to several servers.
 	conn, _ := grpc.Dial(cfg.ServerIP+":"+cfg.ServerPort,
 		grpc.WithTransportCredentials(insecure.NewCredentials()),
 		grpc.WithBlock(),
@@ -63,5 +63,6 @@ func (s *RestServer) StartGatewayServer() {
 }
 
 func (s *RestServer) ShutdownWebServer(ctx context.Context) error {
+
 	return s.server.Shutdown(ctx)
 }

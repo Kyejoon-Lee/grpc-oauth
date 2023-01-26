@@ -8,7 +8,10 @@ import (
 	"fmt"
 	"time"
 
+	"google.golang.org/grpc"
+
 	"github.com/Kyejoon-Lee/grpc-server/config"
+	"github.com/Kyejoon-Lee/grpc-server/db"
 	"github.com/Kyejoon-Lee/grpc-server/internal/app"
 	"github.com/Kyejoon-Lee/grpc-server/internal/app/module"
 	log "github.com/sirupsen/logrus"
@@ -52,10 +55,13 @@ func init() {
 }
 
 func runServer() {
+	cfg := config.GetConfig()
 	ctx, stop := module.ServerContext()
 	defer stop()
 
-	app.StartGrpcServer()
+	db.AutoMigrate(cfg)
+	grpcServer := app.GrpcServer{Server: grpc.NewServer()}
+	grpcServer.StartGrpcServer()
 	// Listen for the interrupt signal.
 	<-ctx.Done()
 
@@ -65,6 +71,7 @@ func runServer() {
 
 	// The context is used to inform the server it has 5 seconds to finish
 	// the request it is currently handling
-	_, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
+
 }

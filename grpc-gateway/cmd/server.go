@@ -73,4 +73,7 @@ func runServer() {
 	if err := server.ShutdownWebServer(ctx); err != nil {
 		log.Fatal("Server forced to shutdown: ", err)
 	}
+
+	log.Info("Server exiting")
+
 }

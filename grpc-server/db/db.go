@@ -40,7 +40,7 @@ func connectionURL(cfg *config.Config) (string, error) {
 	return "", errors.New("unknown adapter")
 }
 
-func Connection(cfg *config.Config) {
+func AutoMigrate(cfg *config.Config) {
 
 	var (
 		url string

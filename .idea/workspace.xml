@@ -5,21 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3773281-b151-4f6c-b712-315b62e407da" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/grpc-oauth.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/protoeditor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-server/googleapis" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-server/internal/app/grpcServer.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grpc-server/internal/app/module/module.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-gateway/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-gateway/config/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-gateway/cmd/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-gateway/cmd/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-gateway/internal/app/restServer.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-gateway/internal/app/restServer.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grpc-server/cmd/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-server/cmd/server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-server/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-server/config/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-server/ent/proto/entpb/entpb.proto" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-server/ent/proto/entpb/entpb.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-server/ent/proto/entpb/generate.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-server/ent/proto/entpb/generate.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-server/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-server/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-server/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-server/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-server/db/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-server/db/db.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-server/internal/app/grpcServer.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-server/internal/app/grpcServer.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
