@@ -12,11 +12,12 @@ type Config struct {
 }
 
 var config = &Config{
-	GatewayIP:   "localhost",
-	GatewayPort: "9091",
-
-	ServerIP:   "localhost",
-	ServerPort: "9090",
+	GatewayIP:    "localhost",
+	GatewayPort:  "9091",
+	ClientID:     "757ff2f0153f3958ee4269936d1d701b",
+	ClientSecret: "fCgU42MO4BKBn5S3diz63R67h3RL9NGu",
+	ServerIP:     "localhost",
+	ServerPort:   "9090",
 }
 
 func GetConfig() *Config {

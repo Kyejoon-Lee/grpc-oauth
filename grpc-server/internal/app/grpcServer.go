@@ -1,7 +1,8 @@
 package app
 
 import (
-	"log"
+	log "github.com/sirupsen/logrus"
+
 	"net"
 
 	"google.golang.org/grpc"
@@ -28,7 +29,13 @@ func (s *GrpcServer) StartGrpcServer() {
 	entpb.RegisterUserServiceServer(s.Server, &UserServer{})
 
 	log.Printf("start gRPC server on %s port", cfg.ServerPort)
-	if err := s.Server.Serve(lis); err != nil {
-		log.Fatalf("failed to serve: %s", err)
-	}
+	go func() {
+		if err := s.Server.Serve(lis); err != nil {
+			log.Fatalf("failed to serve: %s", err)
+		}
+	}()
+}
+
+func (s *GrpcServer) ShutdownGrpcServer() {
+	s.Server.GracefulStop()
 }

@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3773281-b151-4f6c-b712-315b62e407da" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/static/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grpc-gateway/cmd/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-gateway/cmd/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-gateway/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-gateway/config/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-gateway/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-gateway/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-gateway/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-gateway/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grpc-gateway/internal/app/restServer.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-gateway/internal/app/restServer.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grpc-server/cmd/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-server/cmd/server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-server/db/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-server/db/db.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grpc-server/internal/app/grpcServer.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-server/internal/app/grpcServer.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,6 +30,9 @@
   <component name="GOROOT" url="file:///usr/local/opt/go/libexec" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiPersistence">
+    <option name="context" value="rancher-desktop" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -47,14 +53,18 @@
     "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
     "RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed": "true",
     "WebServerToolWindowFactoryState": "false",
+    "ask.go.tool.to.install.GoImportsTaskConsumer": "true",
+    "configurable..is.expanded": "false",
+    "configurable.GoLibrariesConfigurable.is.expanded": "true",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "/Users/joshua/toy_project/grpc-oauth/grpc-server",
-    "settings.editor.selected.configurable": "google.protobuf.language"
+    "last_opened_file_path": "/Users/joshua/toy_project/grpc-oauth",
+    "settings.editor.selected.configurable": "watcher.settings"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/grpc-server" />
     </key>
   </component>
@@ -62,6 +72,7 @@
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="grpc-oauth" />
       <working_directory value="$PROJECT_DIR$/grpc-server" />
+      <parameters value="server" />
       <kind value="FILE" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/grpc-server/main.go" />
@@ -90,5 +101,21 @@
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/grpc-gateway/api/auth.go</url>
+          <line>55</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/grpc-gateway/api/auth.go</url>
+          <line>56</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

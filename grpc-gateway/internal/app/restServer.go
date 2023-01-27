@@ -3,17 +3,14 @@ package app
 import (
 	"context"
 	"fmt"
-	"log"
 	"net/http"
 	"time"
 
-	"google.golang.org/grpc"
-	"google.golang.org/grpc/credentials/insecure"
-
+	"github.com/Kyejoon-Lee/grpc-gateway/api"
 	"github.com/Kyejoon-Lee/grpc-gateway/config"
-	"github.com/Kyejoon-Lee/grpc-gateway/ent/proto/entpb"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
+	log "github.com/sirupsen/logrus"
 )
 
 type RestServer struct {
@@ -22,7 +19,6 @@ type RestServer struct {
 
 var (
 	cfg = config.GetConfig()
-	cli entpb.UserServiceClient
 )
 
 func (s *RestServer) StartGatewayServer() {
@@ -38,14 +34,7 @@ func (s *RestServer) StartGatewayServer() {
 		MaxAge:           1,
 	}))
 
-	//For making connection to GRPC servers you must make grpc dial
-	//to several servers.
-	conn, _ := grpc.Dial(cfg.ServerIP+":"+cfg.ServerPort,
-		grpc.WithTransportCredentials(insecure.NewCredentials()),
-		grpc.WithBlock(),
-	)
-
-	cli = entpb.NewUserServiceClient(conn)
+	r.GET("/login", api.Login)
 
 	s.server = &http.Server{
 		Addr:              fmt.Sprintf(":%v", cfg.GatewayPort),
@@ -60,9 +49,11 @@ func (s *RestServer) StartGatewayServer() {
 			log.Fatalf("listen: %s\n", err)
 		}
 	}()
+
+	log.Infof("start rest server on %s port", cfg.GatewayPort)
+
 }
 
 func (s *RestServer) ShutdownWebServer(ctx context.Context) error {
-
 	return s.server.Shutdown(ctx)
 }

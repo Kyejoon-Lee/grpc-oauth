@@ -74,4 +74,7 @@ func runServer() {
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
 
+	grpcServer.ShutdownGrpcServer()
+
+	log.Info("gRPC server is shutdown")
 }

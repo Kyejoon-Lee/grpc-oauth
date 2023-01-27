@@ -71,9 +71,8 @@ func runServer() {
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
 	if err := server.ShutdownWebServer(ctx); err != nil {
-		log.Fatal("Server forced to shutdown: ", err)
+		log.Fatal("Server forced to shutdown", err)
 	}
-
 	log.Info("Server exiting")
 
 }
