@@ -5,14 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3773281-b151-4f6c-b712-315b62e407da" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/static/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-gateway/cmd/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-gateway/cmd/server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-gateway/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-gateway/config/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-gateway/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-gateway/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-gateway/api/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-gateway/api/auth.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-gateway/ent/migrate/schema.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-gateway/ent/migrate/schema.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-gateway/ent/mutation.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-gateway/ent/mutation.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-gateway/ent/proto/entpb/entpb.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-gateway/ent/proto/entpb/entpb.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-gateway/ent/proto/entpb/entpb.proto" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-gateway/ent/proto/entpb/entpb.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-gateway/ent/proto/entpb/entpb_user_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-gateway/ent/proto/entpb/entpb_user_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-gateway/ent/schema/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-gateway/ent/schema/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-gateway/ent/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-gateway/ent/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-gateway/ent/user/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-gateway/ent/user/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-gateway/ent/user/where.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-gateway/ent/user/where.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-gateway/ent/user_create.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-gateway/ent/user_create.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-gateway/ent/user_query.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-gateway/ent/user_query.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-gateway/ent/user_update.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-gateway/ent/user_update.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grpc-gateway/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-gateway/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grpc-gateway/internal/app/restServer.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-gateway/internal/app/restServer.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grpc-server/cmd/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-server/cmd/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-server/db/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-server/db/db.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-server/ent/migrate/schema.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-server/ent/migrate/schema.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-server/ent/mutation.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-server/ent/mutation.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-server/ent/proto/entpb/entpb.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-server/ent/proto/entpb/entpb.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-server/ent/proto/entpb/entpb.proto" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-server/ent/proto/entpb/entpb.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-server/ent/proto/entpb/entpb_user_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-server/ent/proto/entpb/entpb_user_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-server/ent/proto/entpb/generate.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-server/ent/proto/entpb/generate.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-server/ent/schema/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-server/ent/schema/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-server/ent/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-server/ent/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-server/ent/user/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-server/ent/user/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-server/ent/user/where.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-server/ent/user/where.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-server/ent/user_create.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-server/ent/user_create.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-server/ent/user_query.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-server/ent/user_query.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-server/ent/user_update.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-server/ent/user_update.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/grpc-server/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-server/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/grpc-server/internal/app/grpcServer.go" beforeDir="false" afterPath="$PROJECT_DIR$/grpc-server/internal/app/grpcServer.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +98,7 @@
       <parameters value="server" />
       <kind value="FILE" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/grpc-server/main.go" />
+      <filePath value="$PROJECT_DIR$/grpc-gateway/main.go" />
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -107,13 +130,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/grpc-gateway/api/auth.go</url>
-          <line>55</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/grpc-gateway/api/auth.go</url>
-          <line>56</line>
-          <option name="timeStamp" value="2" />
+          <line>50</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

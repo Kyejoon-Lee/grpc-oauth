@@ -40,7 +40,7 @@ func connectionURL(cfg *config.Config) (string, error) {
 	return "", errors.New("unknown adapter")
 }
 
-func AutoMigrate(cfg *config.Config) {
+func AutoMigrate(cfg *config.Config) *ent.Client {
 
 	var (
 		url string
@@ -55,8 +55,8 @@ func AutoMigrate(cfg *config.Config) {
 	if err != nil {
 		log.Fatalf("DB connection failed : %v", err)
 	}
-	defer client.Close()
 	if err = client.Schema.Create(context.Background()); err != nil {
 		log.Fatalf("Schema create failed : %v", err)
 	}
+	return client
 }

@@ -9,7 +9,6 @@ import (
 	fmt "fmt"
 	ent "github.com/Kyejoon-Lee/grpc-gateway/ent"
 	user "github.com/Kyejoon-Lee/grpc-gateway/ent/user"
-	uuid "github.com/google/uuid"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
 	emptypb "google.golang.org/protobuf/types/known/emptypb"
@@ -38,11 +37,6 @@ func toProtoUser(e *ent.User) (*User, error) {
 	v.Id = id
 	name := e.Name
 	v.Name = name
-	uid, err := e.UID.MarshalBinary()
-	if err != nil {
-		return nil, err
-	}
-	v.Uid = uid
 	return v, nil
 }
 
@@ -121,11 +115,6 @@ func (svc *UserService) Update(ctx context.Context, req *UpdateUserRequest) (*Us
 	m.SetEmail(userEmail)
 	userName := user.GetName()
 	m.SetName(userName)
-	var userUID uuid.UUID
-	if err := (&userUID).UnmarshalBinary(user.GetUid()); err != nil {
-		return nil, status.Errorf(codes.InvalidArgument, "invalid argument: %s", err)
-	}
-	m.SetUID(userUID)
 
 	res, err := m.Save(ctx)
 	switch {
@@ -261,10 +250,5 @@ func (svc *UserService) createBuilder(user *User) (*ent.UserCreate, error) {
 	m.SetEmail(userEmail)
 	userName := user.GetName()
 	m.SetName(userName)
-	var userUID uuid.UUID
-	if err := (&userUID).UnmarshalBinary(user.GetUid()); err != nil {
-		return nil, status.Errorf(codes.InvalidArgument, "invalid argument: %s", err)
-	}
-	m.SetUID(userUID)
 	return m, nil
 }

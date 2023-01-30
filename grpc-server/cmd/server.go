@@ -59,9 +59,10 @@ func runServer() {
 	ctx, stop := module.ServerContext()
 	defer stop()
 
-	db.AutoMigrate(cfg)
+	client := db.AutoMigrate(cfg)
 	grpcServer := app.GrpcServer{Server: grpc.NewServer()}
-	grpcServer.StartGrpcServer()
+	grpcServer.StartGrpcServer(client)
+	defer client.Close()
 	// Listen for the interrupt signal.
 	<-ctx.Done()
 

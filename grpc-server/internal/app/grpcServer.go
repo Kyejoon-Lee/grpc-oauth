@@ -1,6 +1,7 @@
 package app
 
 import (
+	"github.com/Kyejoon-Lee/grpc-server/ent"
 	log "github.com/sirupsen/logrus"
 
 	"net"
@@ -21,12 +22,13 @@ type UserServer struct {
 
 var cfg = config.GetConfig()
 
-func (s *GrpcServer) StartGrpcServer() {
+func (s *GrpcServer) StartGrpcServer(client *ent.Client) {
 	lis, err := net.Listen("tcp", ":"+cfg.ServerPort)
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
-	entpb.RegisterUserServiceServer(s.Server, &UserServer{})
+	svc := entpb.NewUserService(client)
+	entpb.RegisterUserServiceServer(s.Server, svc)
 
 	log.Printf("start gRPC server on %s port", cfg.ServerPort)
 	go func() {

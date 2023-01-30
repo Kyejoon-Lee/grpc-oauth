@@ -10,7 +10,6 @@ import (
 	"entgo.io/ent/dialect/sql/sqlgraph"
 	"entgo.io/ent/schema/field"
 	"github.com/Kyejoon-Lee/grpc-gateway/ent/user"
-	"github.com/google/uuid"
 )
 
 // UserCreate is the builder for creating a User entity.
@@ -18,12 +17,6 @@ type UserCreate struct {
 	config
 	mutation *UserMutation
 	hooks    []Hook
-}
-
-// SetUID sets the "uid" field.
-func (uc *UserCreate) SetUID(u uuid.UUID) *UserCreate {
-	uc.mutation.SetUID(u)
-	return uc
 }
 
 // SetName sets the "name" field.
@@ -72,9 +65,6 @@ func (uc *UserCreate) ExecX(ctx context.Context) {
 
 // check runs all checks and user-defined validators on the builder.
 func (uc *UserCreate) check() error {
-	if _, ok := uc.mutation.UID(); !ok {
-		return &ValidationError{Name: "uid", err: errors.New(`ent: missing required field "User.uid"`)}
-	}
 	if _, ok := uc.mutation.Name(); !ok {
 		return &ValidationError{Name: "name", err: errors.New(`ent: missing required field "User.name"`)}
 	}
@@ -113,10 +103,6 @@ func (uc *UserCreate) createSpec() (*User, *sqlgraph.CreateSpec) {
 			},
 		}
 	)
-	if value, ok := uc.mutation.UID(); ok {
-		_spec.SetField(user.FieldUID, field.TypeUUID, value)
-		_node.UID = value
-	}
 	if value, ok := uc.mutation.Name(); ok {
 		_spec.SetField(user.FieldName, field.TypeString, value)
 		_node.Name = value

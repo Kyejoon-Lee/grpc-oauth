@@ -12,7 +12,6 @@ import (
 	"entgo.io/ent/schema/field"
 	"github.com/Kyejoon-Lee/grpc-server/ent/predicate"
 	"github.com/Kyejoon-Lee/grpc-server/ent/user"
-	"github.com/google/uuid"
 )
 
 // UserUpdate is the builder for updating User entities.
@@ -25,12 +24,6 @@ type UserUpdate struct {
 // Where appends a list predicates to the UserUpdate builder.
 func (uu *UserUpdate) Where(ps ...predicate.User) *UserUpdate {
 	uu.mutation.Where(ps...)
-	return uu
-}
-
-// SetUID sets the "uid" field.
-func (uu *UserUpdate) SetUID(u uuid.UUID) *UserUpdate {
-	uu.mutation.SetUID(u)
 	return uu
 }
 
@@ -96,9 +89,6 @@ func (uu *UserUpdate) sqlSave(ctx context.Context) (n int, err error) {
 			}
 		}
 	}
-	if value, ok := uu.mutation.UID(); ok {
-		_spec.SetField(user.FieldUID, field.TypeUUID, value)
-	}
 	if value, ok := uu.mutation.Name(); ok {
 		_spec.SetField(user.FieldName, field.TypeString, value)
 	}
@@ -123,12 +113,6 @@ type UserUpdateOne struct {
 	fields   []string
 	hooks    []Hook
 	mutation *UserMutation
-}
-
-// SetUID sets the "uid" field.
-func (uuo *UserUpdateOne) SetUID(u uuid.UUID) *UserUpdateOne {
-	uuo.mutation.SetUID(u)
-	return uuo
 }
 
 // SetName sets the "name" field.
@@ -216,9 +200,6 @@ func (uuo *UserUpdateOne) sqlSave(ctx context.Context) (_node *User, err error) 
 				ps[i](selector)
 			}
 		}
-	}
-	if value, ok := uuo.mutation.UID(); ok {
-		_spec.SetField(user.FieldUID, field.TypeUUID, value)
 	}
 	if value, ok := uuo.mutation.Name(); ok {
 		_spec.SetField(user.FieldName, field.TypeString, value)

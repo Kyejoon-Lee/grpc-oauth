@@ -5,7 +5,6 @@ package user
 import (
 	"entgo.io/ent/dialect/sql"
 	"github.com/Kyejoon-Lee/grpc-server/ent/predicate"
-	"github.com/google/uuid"
 )
 
 // ID filters vertices based on their ID field.
@@ -53,11 +52,6 @@ func IDLTE(id int) predicate.User {
 	return predicate.User(sql.FieldLTE(FieldID, id))
 }
 
-// UID applies equality check predicate on the "uid" field. It's identical to UIDEQ.
-func UID(v uuid.UUID) predicate.User {
-	return predicate.User(sql.FieldEQ(FieldUID, v))
-}
-
 // Name applies equality check predicate on the "name" field. It's identical to NameEQ.
 func Name(v string) predicate.User {
 	return predicate.User(sql.FieldEQ(FieldName, v))
@@ -66,46 +60,6 @@ func Name(v string) predicate.User {
 // Email applies equality check predicate on the "email" field. It's identical to EmailEQ.
 func Email(v string) predicate.User {
 	return predicate.User(sql.FieldEQ(FieldEmail, v))
-}
-
-// UIDEQ applies the EQ predicate on the "uid" field.
-func UIDEQ(v uuid.UUID) predicate.User {
-	return predicate.User(sql.FieldEQ(FieldUID, v))
-}
-
-// UIDNEQ applies the NEQ predicate on the "uid" field.
-func UIDNEQ(v uuid.UUID) predicate.User {
-	return predicate.User(sql.FieldNEQ(FieldUID, v))
-}
-
-// UIDIn applies the In predicate on the "uid" field.
-func UIDIn(vs ...uuid.UUID) predicate.User {
-	return predicate.User(sql.FieldIn(FieldUID, vs...))
-}
-
-// UIDNotIn applies the NotIn predicate on the "uid" field.
-func UIDNotIn(vs ...uuid.UUID) predicate.User {
-	return predicate.User(sql.FieldNotIn(FieldUID, vs...))
-}
-
-// UIDGT applies the GT predicate on the "uid" field.
-func UIDGT(v uuid.UUID) predicate.User {
-	return predicate.User(sql.FieldGT(FieldUID, v))
-}
-
-// UIDGTE applies the GTE predicate on the "uid" field.
-func UIDGTE(v uuid.UUID) predicate.User {
-	return predicate.User(sql.FieldGTE(FieldUID, v))
-}
-
-// UIDLT applies the LT predicate on the "uid" field.
-func UIDLT(v uuid.UUID) predicate.User {
-	return predicate.User(sql.FieldLT(FieldUID, v))
-}
-
-// UIDLTE applies the LTE predicate on the "uid" field.
-func UIDLTE(v uuid.UUID) predicate.User {
-	return predicate.User(sql.FieldLTE(FieldUID, v))
 }
 
 // NameEQ applies the EQ predicate on the "name" field.

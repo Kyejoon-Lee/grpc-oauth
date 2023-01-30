@@ -48,8 +48,9 @@ func Login(c *gin.Context) {
 	parsed, err := jwt.Parse(mod.IdToken, func(token *jwt.Token) (interface{}, error) {
 		return nil, nil
 	})
-	log.Println(parsed.Claims.(jwt.MapClaims)["email"])
-	temp := entpb.User{Email: "ll"}
+	email := parsed.Claims.(jwt.MapClaims)["email"]
+	//clientID := parsed.Claims.(jwt.MapClaims)["clentid"]
+	temp := entpb.User{Email: email.(string), Name: "lee"}
 	grpcClient := service.GrpcCLI{}
 	grpcClient.StartGrpcConnection()
 
